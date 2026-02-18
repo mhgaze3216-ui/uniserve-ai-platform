@@ -2,7 +2,6 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Dashboard from './components/Dashboard';
-import './App.css';
 
 // Placeholder components - سننشئها لاحقاً
 const Users = () => <div><h1>User Management</h1><p>Manage students and instructors</p></div>;
