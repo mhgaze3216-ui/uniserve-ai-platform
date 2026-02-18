@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uniserve AI | Consultation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/consultation.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/fixes.css">
+  <link rel="stylesheet" href="assets/css/mobile-nav-fix.css">
+  <link rel="stylesheet" href="assets/css/signin-button-fix.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/header-unified.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-container">
+    <img src="assets/images/logo-thumb.png" alt="Logo" class="logo-thumb" onerror="this.src='https://via.placeholder.com/40x40/transparent/transparent'">
+    <div class="logo">Uniserve<span>AI</span></div>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="consultation.html" class="active">Consultation</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="education.html">Education</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="login.html" class="mobile-signin" style="display: none;">Sign In</a>
+  </nav>
+
+  <div class="signin-container">
+    <div class="user-avatar-container">
+      <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=195de6&color=fff" alt="User" class="user-avatar" title="Click to change image">
+    </div>
+    <a href="login.html" class="signin-btn">Sign In</a>
+  </div>
+</header>
+
+<!-- CONSULTATION LAYOUT -->
+<main class="consultation">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h3>Consultation Fields</h3>
+      <p>Select a specialized AI advisor</p>
+    </div>
+
+    <div class="field-list">
+      <button class="field active" data-field="business">
+        <img src="assets/images/business.png" alt="Business">
+        <span>Business</span>
+      </button>
+      <button class="field" data-field="technology">
+        <img src="assets/images/technology.png" alt="Technology">
+        <span>Technology</span>
+      </button>
+      <button class="field" data-field="healthcare">
+        <img src="assets/images/healthcare.png" alt="Healthcare">
+        <span>Healthcare</span>
+      </button>
+      <button class="field" data-field="legal">
+        <img src="assets/images/legal.png" alt="Legal">
+        <span>Legal</span>
+      </button>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="ai-status">
+        <div class="status-dot online"></div>
+        <span>AI Advisor Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CHAT AREA -->
+  <section class="chat">
+
+    <div class="chat-header">
+      <div class="advisor-info">
+        <div class="advisor-avatar">
+          <img src="assets/images/ai-consultant.png" alt="AI Consultant" id="currentAdvisorImg">
+        </div>
+        <div>
+          <h2 id="chatTitle">Business Consultation</h2>
+          <span class="status-text">Active Session • AI Expert</span>
+        </div>
+      </div>
+      <div class="chat-actions">
+        <button class="action-icon" title="Clear Chat"><i class="fas fa-trash-alt"></i></button>
+        <button class="action-icon" title="Export PDF"><i class="fas fa-file-export"></i></button>
+      </div>
+    </div>
+
+    <div class="messages" id="messages">
+      <div class="message consultant">
+        <div class="avatar-mini">
+          <img src="assets/images/ai-consultant.png" alt="AI">
+        </div>
+        <div class="message-content">
+          <p class="author">Uniserve AI Advisor</p>
+          <div class="bubble">
+            Hello! I am your <strong>Business Consultation</strong> specialist. How can I help you optimize your operations or strategy today?
+          </div>
+          <span class="time">Just now</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-container">
+      <div class="input-wrapper">
+        <button class="attachment-btn"><i class="fas fa-plus"></i></button>
+        <input
+          id="messageInput"
+          type="text"
+          placeholder="Describe your challenge..."
+        />
+        <button id="sendBtn" class="send-btn">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+      <p class="input-hint">Press Enter to send. AI may provide automated suggestions.</p>
+    </div>
+
+  </section>
+
+</main>
+
+  <!-- Scripts -->
+  <script src="assets/js/universal-loader.js"></script>
+  <link rel="stylesheet" href="assets/css/enhancements.css">
+</body>
+</html>

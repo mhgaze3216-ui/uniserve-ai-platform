@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uniserve AI | Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/education.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/fixes.css">
+  <link rel="stylesheet" href="assets/css/mobile-nav-fix.css">
+  <link rel="stylesheet" href="assets/css/signin-button-fix.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/header-unified.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-container">
+    <img src="assets/images/logo-thumb.png" alt="Logo" class="logo-thumb" onerror="this.style.display='none'">
+    <div class="logo">Uniserve<span>AI</span></div>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="login.html" class="mobile-signin" style="display: none;">Sign In</a>
+  </nav>
+
+  <div class="signin-container">
+    <div class="user-avatar-container">
+      <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=195de6&color=fff" alt="User" class="user-avatar" title="Click to change image">
+    </div>
+    <a href="login.html" class="signin-btn">Sign In</a>
+  </div>
+</header>
+
+<!-- EDUCATION -->
+<main class="education">
+
+  <!-- CATEGORIES -->
+  <aside class="categories">
+    <h3>Categories</h3>
+
+    <button class="category active" data-category="all">All</button>
+    <button class="category" data-category="programming">Programming</button>
+    <button class="category" data-category="language">Language</button>
+    <button class="category" data-category="ai">AI</button>
+    <button class="category" data-category="web">Web Development</button>
+  </aside>
+
+  <!-- COURSES -->
+  <section class="courses" id="courses">
+
+    <!-- PROGRAMMING COURSES -->
+    <div class="course" data-category="programming">
+      <div class="course-image">
+        <img src="assets/images/pyh.jpg" alt="Python Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>Python Programming</h4>
+        <p>Learn Python from basics to advanced concepts.</p>
+        <div class="course-meta">
+          <span class="price">$40</span>
+          <span class="duration"><i class="fas fa-clock"></i> 5 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <div class="course" data-category="programming">
+      <div class="course-image">
+        <img src="assets/images/c++.jpg" alt="C++ Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>C++ Programming</h4>
+        <p>Master C++ for system programming and performance.</p>
+        <div class="course-meta">
+          <span class="price">$60</span>
+          <span class="duration"><i class="fas fa-clock"></i> 6 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <div class="course" data-category="programming">
+      <div class="course-image">
+        <img src="assets/images/cyper.jpg" alt="Cybersecurity Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>Cybersecurity Essentials</h4>
+        <p>Learn to protect systems and data from cyber threats.</p>
+        <div class="course-meta">
+          <span class="price">$80</span>
+          <span class="duration"><i class="fas fa-clock"></i> 4 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <div class="course" data-category="programming">
+      <div class="course-image">
+        <img src="assets/images/java .jpg" alt="JavaScript Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>JavaScript Mastery</h4>
+        <p>Interactive web development with JavaScript.</p>
+        <div class="course-meta">
+          <span class="price">$75</span>
+          <span class="duration"><i class="fas fa-clock"></i> 4 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <!-- LANGUAGE COURSES -->
+    <div class="course" data-category="language">
+      <div class="course-image">
+        <img src="assets/images/englsih.jpg" alt="English Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>English Language Course</h4>
+        <p>Improve your English communication skills.</p>
+        <div class="course-meta">
+          <span class="price">$30</span>
+          <span class="duration"><i class="fas fa-clock"></i> 4 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <!-- AI COURSES -->
+    <div class="course" data-category="ai">
+      <div class="course-image">
+        <img src="assets/images/ai .jpg" alt="AI Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>Artificial Intelligence Fundamentals</h4>
+        <p>Introduction to AI, machine learning, and neural networks.</p>
+        <div class="course-meta">
+          <span class="price">$40</span>
+          <span class="duration"><i class="fas fa-clock"></i> 8 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <!-- WEB DEVELOPMENT COURSES -->
+    <div class="course" data-category="web">
+      <div class="course-image">
+        <img src="assets/images/front.jpg" alt="Frontend Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>Frontend Web Development</h4>
+        <p>Create beautiful and interactive user interfaces.</p>
+        <div class="course-meta">
+          <span class="price">$30</span>
+          <span class="duration"><i class="fas fa-clock"></i> 4 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+    <div class="course" data-category="web">
+      <div class="course-image">
+        <img src="assets/images/back.jpg" alt="Backend Course" onerror="this.src='assets/images/courses/placeholder.jpg'">
+      </div>
+      <div class="course-content">
+        <h4>Backend Web Development</h4>
+        <p>Build scalable server-side applications.</p>
+        <div class="course-meta">
+          <span class="price">$40</span>
+          <span class="duration"><i class="fas fa-clock"></i> 5 weeks</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Online</span>
+        </div>
+        <button class="btn-enroll">Enroll Now</button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/universal-loader.js"></script>
+  <link rel="stylesheet" href="assets/css/enhancements.css">
+  <script src="assets/js/education.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uniserve AI | Cybersecurity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/cybersecurity.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/fixes.css">
+  <link rel="stylesheet" href="assets/css/mobile-nav-fix.css">
+  <link rel="stylesheet" href="assets/css/signin-button-fix.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/header-unified.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-container">
+    <img src="assets/images/logo-thumb.png" alt="Logo" class="logo-thumb" onerror="this.style.display='none'">
+    <div class="logo">Uniserve<span>AI</span></div>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="education.html">Education</a>
+    <a href="cybersecurity.html" class="active">Cybersecurity</a>
+    <a href="login.html" class="mobile-signin" style="display: none;">Sign In</a>
+  </nav>
+
+  <div class="signin-container">
+    <div class="user-avatar-container">
+      <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=195de6&color=fff" alt="User" class="user-avatar" title="Click to change image">
+    </div>
+    <a href="login.html" class="signin-btn">Sign In</a>
+  </div>
+</header>
+
+<!-- CYBERSECURITY -->
+<main class="cyber">
+
+  <!-- Background Animation Canvas -->
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+
+  <section class="scanner">
+    <h1 class="main-headline">STAY SAFE ONLINE</h1>
+    <h2>Link Security Scanner</h2>
+    <p>Scan any URL to check if it is safe or potentially dangerous.</p>
+
+    <div class="scan-box">
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="Enter URL to scan..."
+      />
+      <button id="scanBtn">Scan</button>
+    </div>
+
+    <div class="result" id="result"></div>
+    
+    <!-- Scanning Checklist -->
+    <div class="scan-checklist" id="scanChecklist">
+      <div class="scan-item" data-step="1">
+        <div class="scan-icon"><i class="fas fa-circle-notch fa-spin"></i></div>
+        <div class="scan-text">
+          <span class="scan-label">Threat database scan</span>
+          <span class="scan-value">Scanning...</span>
+        </div>
+      </div>
+      <div class="scan-item" data-step="2">
+        <div class="scan-icon"><i class="fas fa-circle-notch fa-spin"></i></div>
+        <div class="scan-text">
+          <span class="scan-label">Malware signature analysis</span>
+          <span class="scan-value">Waiting...</span>
+        </div>
+      </div>
+      <div class="scan-item" data-step="3">
+        <div class="scan-icon"><i class="fas fa-circle-notch fa-spin"></i></div>
+        <div class="scan-text">
+          <span class="scan-label">Phishing pattern verification</span>
+          <span class="scan-value">Waiting...</span>
+        </div>
+      </div>
+      <div class="scan-item" data-step="4">
+        <div class="scan-icon"><i class="fas fa-circle-notch fa-spin"></i></div>
+        <div class="scan-text">
+          <span class="scan-label">Redirect analysis</span>
+          <span class="scan-value">Waiting...</span>
+        </div>
+      </div>
+      <div class="scan-item" data-step="5">
+        <div class="scan-icon"><i class="fas fa-circle-notch fa-spin"></i></div>
+        <div class="scan-text">
+          <span class="scan-label">SSL / HTTPS validation</span>
+          <span class="scan-value">Waiting...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/universal-loader.js"></script>
+  <link rel="stylesheet" href="assets/css/enhancements.css">
+  <script src="assets/js/cybersecurity.js"></script>
+</body>
+</html>

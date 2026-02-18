@@ -1,0 +1,195 @@
+/* ==========================================
+   UNIFIED THEME VARIABLES & STYLES
+   ========================================== */
+
+/* ROOT VARIABLES - Dark Mode (Default) */
+:root {
+  /* Colors */
+  --primary-color: #195de6;
+  --secondary-color: #0b0f1a;
+  --text-light: #cbd5e1;
+  --text-dark: #ffffff;
+  --bg-dark: #0b0f1a;
+  --bg-light: #1f2937;
+  --bg-lighter: #0f1524;
+  --border-color: #1f2937;
+  --text-secondary: #94a3b8;
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  
+  /* Transitions */
+  --transition-speed: 0.3s ease;
+  
+  /* Additional UI Elements */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --header-bg: var(--bg-dark);
+  --action-bar-bg: var(--bg-light);
+  --hero-gradient: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+}
+
+/* Light Mode Variables */
+body[data-theme="light"] {
+  --primary-color: #195de6;
+  --secondary-color: #ffffff;
+  --text-light: #6b7280;
+  --text-dark: #0b0f1a;
+  --bg-dark: #ffffff;
+  --bg-light: #f3f4f6;
+  --bg-lighter: #f9fafb;
+  --border-color: #e5e7eb;
+  --text-secondary: #6b7280;
+  --success-color: #16a34a;
+  --danger-color: #dc2626;
+  
+  /* Additional UI Elements */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --header-bg: #ffffff;
+  --action-bar-bg: #f9fafb;
+  --hero-gradient: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+}
+
+/* ==========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* RTL Support */
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+body[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ==========================================
+   COMMON COMPONENTS
+   ========================================== */
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  padding: 10px 22px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-light);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Input Fields */
+input, textarea, select {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  font-family: "Inter", sans-serif;
+  transition: border-color var(--transition-speed), background-color var(--transition-speed);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--bg-light);
+}
+
+/* Cards */
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--bg-lighter);
+  transition: all var(--transition-speed);
+  box-shadow: var(--card-shadow);
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 16px rgba(25, 93, 230, 0.1);
+}
+
+/* Text Utilities */
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+/* ==========================================
+   RESPONSIVE UTILITIES
+   ========================================== */
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}

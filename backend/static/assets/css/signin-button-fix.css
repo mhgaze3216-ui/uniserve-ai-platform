@@ -1,0 +1,136 @@
+/* ==========================================
+   SIGN IN BUTTON FIX & STYLING
+   ========================================== */
+
+/* Desktop Sign-In Button */
+.signin-btn {
+    background: var(--primary-color) !important;
+    padding: 10px 22px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+}
+
+.signin-btn:hover {
+    opacity: 0.9 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Desktop View - Show Sign-In Button */
+@media (min-width: 993px) {
+    .signin-btn {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .nav .mobile-signin {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+/* Mobile View - Hide Desktop Button, Show Mobile Button */
+@media (max-width: 992px) {
+    .signin-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    .nav .mobile-signin {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        background: var(--primary-color) !important;
+        color: white !important;
+        padding: 12px 20px !important;
+        border-radius: 8px !important;
+        text-align: center !important;
+        width: 100% !important;
+        border: none !important;
+        cursor: pointer !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    
+    .nav .mobile-signin:hover {
+        opacity: 0.9 !important;
+        transform: translateY(-2px) !important;
+    }
+}
+
+/* Tablet View (992px to 1024px) - Show Desktop Button */
+@media (min-width: 993px) and (max-width: 1024px) {
+    .signin-btn {
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+    .signin-btn {
+        padding: 10px 22px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Ensure header has proper flex layout for Sign-In button */
+.header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Fix for nav and signin-btn positioning in header */
+@media (min-width: 993px) {
+    .header {
+        gap: 20px !important;
+    }
+    
+    .nav {
+        display: flex !important;
+        gap: 32px !important;
+        align-items: center !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        padding: 0 !important;
+        flex-direction: row !important;
+        z-index: auto !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Ensure mobile-signin is properly hidden on desktop */
+@media (min-width: 993px) {
+    .nav a.mobile-signin {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        pointer-events: none !important;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .nav .mobile-signin {
+        padding: 10px 16px !important;
+        font-size: 13px !important;
+    }
+}

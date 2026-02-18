@@ -1,0 +1,119 @@
+/* AUTHENTICATION PAGES STYLES (Login & Register) */
+
+@import url('theme-variables.css');
+
+/* Body override to ensure transitions */
+body {
+  height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* RTL Support */
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+body[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+.auth-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background: var(--bg-lighter);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  text-align: center;
+  transition: all var(--transition-speed);
+  box-shadow: var(--card-shadow);
+}
+
+.auth-box h1 {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.auth-box p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.auth-box input {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  transition: all var(--transition-speed);
+}
+
+.auth-box input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--bg-light);
+}
+
+.auth-box input::placeholder {
+  color: var(--text-secondary);
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: all var(--transition-speed);
+}
+
+.auth-box button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.switch {
+  display: block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.switch a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed);
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}

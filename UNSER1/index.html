@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Uniserve AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/fixes.css">
+  <link rel="stylesheet" href="assets/css/mobile-nav-fix.css">
+  <link rel="stylesheet" href="assets/css/signin-button-fix.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/header-unified.css">
+</head>
+
+<body data-theme="dark" data-lang="en">
+
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="notifications-section">
+          <button class="btn-icon" id="notificationsBtn" title="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </button>
+        </div>
+        
+        <div class="controls-section">
+          <!-- Language Toggle -->
+          <button class="btn-icon" id="languageBtn" title="Switch Language">
+            <i class="fas fa-globe"></i>
+            <span class="lang-text">العربية</span>
+          </button>
+          
+          <!-- Settings -->
+          <button class="btn-icon" id="settingsBtn" title="Settings">
+            <i class="fas fa-cog"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER (as in design) -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="assets/images/logo-thumb.png" alt="Logo" class="logo-thumb" onerror="this.style.display='none'">
+      <div class="logo">Uniserve<span>AI</span></div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="consultation.html">Consultation</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="education.html">Education</a>
+      <a href="cybersecurity.html">Cybersecurity</a>
+      <a href="login.html" class="mobile-signin" style="display: none;">Sign In</a>
+    </nav>
+
+    <div class="signin-container">
+      <div class="user-avatar-container">
+        <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=195de6&color=fff" alt="User" class="user-avatar" title="Click to change image">
+      </div>
+      <a href="login.html" class="signin-btn">Sign In</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>One Platform for All AI Services</h1>
+      <p>
+        Consulting, AI tools, education, and cybersecurity
+        in one unified system.
+      </p>
+
+      <div class="hero-actions">
+        <button id="getStartedBtn" class="btn-primary">Get Started</button>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+
+      <!-- Features Stats -->
+      <div class="features-stats">
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Secure & Reliable</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support Available</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Active Users</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <video width="100%" height="auto" controls autoplay muted style="max-width: 600px; border-radius: 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);">
+        <source src="assets/video/uniserv.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Explore our comprehensive solutions</p>
+
+      <div class="services-grid">
+        <!-- Service 1: Consulting Hub -->
+        <a href="consultation.html" class="service-card">
+          <div class="service-image-container">
+            <img src="assets/images/consuiting.jpg" alt="Consulting Hub" class="service-image" id="consulting-image">
+          </div>
+          <div class="service-content">
+            <h3>Consulting Hub</h3>
+            <p>UniServe AI's Consulting Hub provides expert guidance in tech, education, and business. Users get practical solutions from professional consultants.</p>
+          </div>
+        </a>
+
+        <!-- Service 2: Teachers & Programmers -->
+        <a href="education.html" class="service-card">
+          <div class="service-image-container">
+            <img src="assets/images/teachers.jpg" alt="Teachers & Programmers" class="service-image" id="education-image">
+          </div>
+          <div class="service-content">
+            <h3>Teachers & Programmers</h3>
+            <p>Our platform connects teachers and programmers for collaborative learning. Students can code, ask questions, and learn directly from experts.</p>
+          </div>
+        </a>
+
+        <!-- Service 3: Cyber Security Hub -->
+        <a href="cybersecurity.html" class="service-card">
+          <div class="service-image-container">
+            <img src="assets/images/security.jpg" alt="Cyber Security Hub" class="service-image" id="cybersecurity-image">
+          </div>
+          <div class="service-content">
+            <h3>Cyber Security Hub</h3>
+            <p>The Cyber Security Hub ensures users' data and accounts are fully protected. Learn practical strategies to stay safe in the digital world.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h5>About Us</h5>
+          <ul>
+            <li><a href="#">About UniserveAI</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#">Consultation</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Education</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h5>Contact</h5>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@uniserveai.com">info@uniserveai.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 UniserveAI. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notifications Dropdown -->
+  <div id="notificationsDropdown" class="notifications-dropdown" style="display: none;">
+    <h5>Notifications</h5>
+    <div class="notification-item">
+      <p class="notification-title">Welcome to UniserveAI</p>
+      <p class="notification-desc">Get started with our AI services</p>
+    </div>
+    <div class="notification-item">
+      <p class="notification-title">New features available</p>
+      <p class="notification-desc">Check out our latest updates</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth-ui.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/cart-widget.js"></script>
+  <script src="assets/js/user-profile.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <link rel="stylesheet" href="assets/css/enhancements.css">
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation - UniServe AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/header-unified.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8fafc;
+        }
+        .consultation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            height: calc(100vh - 100px);
+        }
+        .consultation-sidebar {
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .consultation-main {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .consultation-header {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .consultation-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .message {
+            margin-bottom: 20px;
+        }
+        .message-content {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 5px;
+        }
+        .chat-input-container {
+            padding: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .input-wrapper input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .send-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .send-btn:hover {
+            background: #2563eb;
+        }
+        @media (max-width: 800px) {
+            .consultation-container { flex-direction: column; height: auto; }
+            .consultation-sidebar { width: 100%; order: 2; }
+            .consultation-main { order: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="assets/images/logo-thumb.png" alt="Logo" class="logo-thumb" onerror="this.style.display='none'">
+            <div class="logo">Uniserve<span>AI</span></div>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="marketplace.html" class="nav-link">Marketplace</a>
+            <a href="consultation.html" class="nav-link active">Consultation</a>
+            <a href="education.html" class="nav-link">Education</a>
+            <a href="cybersecurity.html" class="nav-link">Cybersecurity</a>
+            <a href="showcase.html" class="nav-link">Showcase</a>
+        </nav>
+        <div class="nav-actions">
+            <div class="cart-widget">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="user-menu">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="consultation-container">
+        <aside class="consultation-sidebar">
+            <h3>Consultation Topics</h3>
+            <div class="topic-list">
+                <div class="topic-item active">
+                    <i class="fas fa-code"></i>
+                    <span>Web Development</span>
+                </div>
+                <div class="topic-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile Apps</span>
+                </div>
+                <div class="topic-item">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Integration</span>
+                </div>
+                <div class="topic-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Cybersecurity</span>
+                </div>
+            </div>
+        </aside>
+
+        <section class="consultation-main">
+            <div class="consultation-header">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+                    <div>
+                        <h2 id="pageTitle">Web Development Consultation</h2>
+                        <p id="pageSubtitle">Get expert advice on your web development projects</p>
+                    </div>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <button id="langToggle" aria-label="Toggle language" title="تبديل اللغة">AR</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="consultation-messages" id="messages" role="log" aria-live="polite">
+                <div class="message">
+                    <div class="message-content">
+                        Hello! I'm here to help you with your web development questions. What specific challenge are you facing?
+                    </div>
+                    <span class="time">Just now</span>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input
+                        id="messageInput"
+                        type="text"
+                        placeholder="Describe your challenge..."
+                        aria-label="Message input"
+                    />
+                    <button id="sendBtn" class="send-btn" aria-label="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="input-hint">Press Enter to send. AI may provide automated suggestions.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Load Socket.IO client from CDN for real-time messaging
+    </script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script>
+        // Enhanced script: persistence, accessibility, RTL toggle
+        (function(){
+            const input = document.getElementById('messageInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const messagesContainer = document.getElementById('messages');
+            const storageKey = 'consultation_messages_v1';
+            const langToggle = document.getElementById('langToggle');
+            const pageTitle = document.getElementById('pageTitle');
+            const pageSubtitle = document.getElementById('pageSubtitle');
+
+            function escapeHtml(str){
+                return str.replace(/[&<>\"']/g, function(tag){
+                    const chars = {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":"&#39;"};
+                    return chars[tag] || tag;
+                });
+            }
+
+            function loadMessages(){
+                const raw = localStorage.getItem(storageKey);
+                if(!raw) return;
+                try{
+                    const list = JSON.parse(raw);
+                    list.forEach(m => appendMessageToDOM(m.text, m.time, false));
+                }catch(e){ console.warn('Failed to load messages', e); }
+            }
+
+            function saveMessage(text){
+                const raw = localStorage.getItem(storageKey);
+                let list = raw ? JSON.parse(raw) : [];
+                list.push({ text, time: new Date().toISOString() });
+                if(list.length>200) list = list.slice(-200);
+                localStorage.setItem(storageKey, JSON.stringify(list));
+            }
+
+            function appendMessageToDOM(text, timeLabel, persist=true){
+                const msg = document.createElement('div');
+                msg.className = 'message';
+                msg.innerHTML = `\n                    <div class="message-content">${escapeHtml(text)}</div>\n                    <span class="time">${timeLabel || 'Just now'}</span>\n                `;
+                messagesContainer.appendChild(msg);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                if(persist) saveMessage(text);
+            }
+
+            sendBtn.addEventListener('click', () => {
+                const message = input.value.trim();
+                if(!message) return;
+                appendMessageToDOM(message, new Date().toLocaleString());
+                input.value = '';
+                input.focus();
+            });
+
+            input.addEventListener('keypress', function(e){
+                if(e.key === 'Enter') sendBtn.click();
+            });
+
+            function setRTL(enabled){
+                document.documentElement.dir = enabled ? 'rtl' : 'ltr';
+                if(enabled){
+                    pageTitle.textContent = 'استشارة تطوير الويب';
+                    pageSubtitle.textContent = 'احصل على نصائح خبراء لمشاريع تطوير الويب الخاصة بك';
+                    langToggle.textContent = 'EN';
+                    langToggle.title = 'Switch to English';
+                }else{
+                    pageTitle.textContent = 'Web Development Consultation';
+                    pageSubtitle.textContent = 'Get expert advice on your web development projects';
+                    langToggle.textContent = 'AR';
+                    langToggle.title = 'تبديل اللغة';
+                }
+            }
+
+            langToggle.addEventListener('click', () => {
+                const cur = document.documentElement.dir === 'rtl';
+                setRTL(!cur);
+                localStorage.setItem('consultation_lang_rtl', (!cur).toString());
+            });
+
+            try{ loadMessages(); }catch(e){}
+            const pref = localStorage.getItem('consultation_lang_rtl');
+            setRTL(pref === 'true');
+
+            console.log('Consultation page enhancements loaded');
+
+            // --- Socket.IO real-time integration ---
+            try{
+                const socket = io();
+                const room = 'webdev-room';
+
+                socket.on('connect', () => {
+                    console.log('Connected to socket server', socket.id);
+                    socket.emit('join-consultation', room);
+                });
+
+                // When server broadcasts a message for this room
+                socket.on('receive-message', (data) => {
+                    // data expected: { consultationId, ... }
+                    if(!data) return;
+                    const text = data.text || data.message || JSON.stringify(data);
+                    appendMessageToDOM(text, new Date().toLocaleString(), true);
+                });
+
+                // Emit to server when user sends message
+                sendBtn.addEventListener('click', () => {
+                    const message = input.value.trim();
+                    if(!message) return;
+                    const payload = { consultationId: room, message };
+                    socket.emit('send-message', payload);
+                    appendMessageToDOM(message, new Date().toLocaleString(), true);
+                    input.value = '';
+                });
+
+                socket.on('disconnect', () => console.log('Socket disconnected'));
+            }catch(e){
+                console.warn('Socket.IO not available', e);
+            }
+        })();
+    </script>
+</body>
+</html>

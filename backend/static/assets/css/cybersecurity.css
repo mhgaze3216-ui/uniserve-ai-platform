@@ -1,0 +1,355 @@
+/* CYBERSECURITY PAGE STYLES */
+
+@import url('theme-variables.css');
+
+/* Body override to ensure transitions */
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* HEADER */
+.header {
+  height: 70px;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--header-bg);
+  transition: all var(--transition-speed);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary-color);
+}
+
+.signin-btn {
+  background: var(--primary-color);
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  border: none;
+  cursor: pointer;
+}
+
+.signin-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* CYBERSECURITY */
+.cyber {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition-speed);
+}
+
+/* Background Canvas Animation */
+.bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.scanner {
+  width: 100%;
+  max-width: 620px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+  background: var(--bg-lighter);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-speed);
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--card-shadow);
+}
+
+body[data-theme="dark"] .scanner {
+  background: rgba(15, 21, 36, 0.95);
+}
+
+body[data-theme="light"] .scanner {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Main Headline */
+.main-headline {
+  font-size: 42px;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--primary-color), #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(25, 93, 230, 0.3);
+}
+
+body[data-theme="light"] .main-headline {
+  background: linear-gradient(135deg, var(--primary-color), #0066cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.scanner h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.scanner p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.scan-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.scan-box input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  transition: all var(--transition-speed);
+}
+
+.scan-box input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--bg-light);
+  box-shadow: 0 0 0 3px rgba(25, 93, 230, 0.1);
+}
+
+.scan-box button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  white-space: nowrap;
+}
+
+.scan-box button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 93, 230, 0.4);
+}
+
+.scan-box button:active {
+  transform: translateY(0);
+}
+
+.result {
+  margin-top: 24px;
+  font-size: 14px;
+  min-height: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg-dark);
+  transition: all var(--transition-speed);
+  display: none;
+}
+
+.result.visible {
+  display: block;
+}
+
+.result.safe {
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.result.danger {
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.result.empty {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: transparent;
+}
+
+/* Scan Checklist */
+.scan-checklist {
+  margin-top: 30px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.scan-checklist.active {
+  display: flex;
+}
+
+.scan-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.scan-item.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scan-item.completed {
+  border-color: var(--success-color);
+  background: rgba(34, 197, 94, 0.05);
+}
+
+.scan-icon {
+  font-size: 20px;
+  color: var(--text-secondary);
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed);
+}
+
+.scan-item.completed .scan-icon {
+  color: var(--success-color);
+}
+
+.scan-item.completed .scan-icon i {
+  animation: none;
+}
+
+.scan-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.scan-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.scan-value {
+  font-size: 12px;
+  color: var(--text-secondary);
+  transition: all var(--transition-speed);
+}
+
+.scan-item.completed .scan-value {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-headline {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+  
+  .scanner {
+    padding: 30px 20px;
+  }
+  
+  .scanner h2 {
+    font-size: 20px;
+  }
+  
+  .scan-box {
+    flex-direction: column;
+  }
+  
+  .scan-box button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cybersecurity Scanner Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/universal-loader.js"></script>
+  <link rel="stylesheet" href="assets/css/enhancements.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Showcase-specific styles */
+    .showcase-container {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0b0f1a 0%, #1a1f3a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .showcase-content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .showcase-header {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .showcase-header h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #195de6, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .showcase-header p {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .feature-card {
+      background: rgba(31, 41, 55, 0.5);
+      border: 1px solid rgba(25, 93, 230, 0.3);
+      border-radius: 12px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.8s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.2s; }
+    .feature-card:nth-child(3) { animation-delay: 0.3s; }
+    .feature-card:nth-child(4) { animation-delay: 0.4s; }
+    .feature-card:nth-child(5) { animation-delay: 0.5s; }
+    .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .feature-card:hover {
+      border-color: rgba(25, 93, 230, 0.6);
+      background: rgba(31, 41, 55, 0.8);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(25, 93, 230, 0.2);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      color: #22c55e;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      background: rgba(15, 21, 36, 0.8);
+      border: 2px solid rgba(25, 93, 230, 0.3);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 0.8s ease-out 0.7s both;
+    }
+
+    .demo-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .demo-scanner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .benefits-section {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      animation: fadeInUp 0.8s ease-out 0.8s both;
+    }
+
+    .benefits-section h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #22c55e;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .benefits-list li {
+      padding: 10px 0;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+    }
+
+    .benefits-list li:before {
+      content: "✓";
+      color: #22c55e;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 60px;
+      animation: fadeInUp 0.8s ease-out 0.9s both;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #195de6, #0066cc);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(25, 93, 230, 0.4);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .showcase-header h1 {
+        font-size: 32px;
+      }
+
+      .showcase-header p {
+        font-size: 16px;
+      }
+
+      .demo-section {
+        padding: 20px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="showcase-container">
+  <canvas id="showcaseCanvas" class="showcase-canvas"></canvas>
+
+  <div class="showcase-content">
+    <!-- Header Section -->
+    <div class="showcase-header">
+      <h1>🔒 Cybersecurity Scanner Showcase</h1>
+      <p>Experience real-time security scanning with dynamic animations and live threat analysis. Explore the enhanced cybersecurity features designed to keep your links safe.</p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Real-time Scanning</h3>
+        <p>Dynamic step-by-step security checks that appear one by one with smooth animations.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>5-Point Verification</h3>
+        <p>Comprehensive threat database, malware analysis, phishing detection, redirect analysis, and SSL validation.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Zero Threats Detected</h3>
+        <p>Each security check displays specific zero values (0 threats, 0 detected, 0 matches) for complete transparency.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌊</div>
+        <h3>Background Motion</h3>
+        <p>Subtle animated particles and data streams create a living, breathing cybersecurity atmosphere.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Visual Feedback</h3>
+        <p>Green checkmarks and status indicators provide instant visual confirmation of completed security checks.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Modern Design</h3>
+        <p>Professional cybersecurity interface with smooth transitions and polished interactions.</p>
+      </div>
+    </div>
+
+    <!-- Demo Section -->
+    <div class="demo-section">
+      <h2>Try the Enhanced Scanner</h2>
+      <div class="demo-scanner">
+        <p style="text-align: center; color: #94a3b8; margin-bottom: 20px;">
+          <a href="cybersecurity.html" style="color: #195de6; text-decoration: none; font-weight: 600;">
+            Click here to open the full scanner →
+          </a>
+        </p>
+        <p style="text-align: center; color: #cbd5e1; font-size: 14px;">
+          Test URLs: Try "example.com" for safe results or include "hack" or "phish" for warning results.
+        </p>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="benefits-section">
+        <h3>
+          <i class="fas fa-star"></i> Key Benefits
+        </h3>
+        <ul class="benefits-list">
+          <li><strong>Explore data more intuitively</strong> - Watch security checks complete in real-time with visual progress indicators</li>
+          <li><strong>Understand trends better</strong> - See exactly which security parameters passed and their specific results</li>
+          <li><strong>Easily save or share</strong> - Copy scan results or share the scanner link with others for collaborative security checking</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 16px;">
+        Ready to experience advanced cybersecurity scanning?
+      </p>
+      <a href="cybersecurity.html" class="cta-button">
+        <i class="fas fa-shield-alt"></i> Launch Scanner
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Background animation for showcase
+  const canvas = document.getElementById("showcaseCanvas");
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  class ShowcaseParticle {
+    constructor() {
+      this.reset();
+    }
+    
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.size = Math.random() * 1.5 + 0.5;
+      this.opacity = Math.random() * 0.2 + 0.05;
+    }
+    
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        this.reset();
+      }
+    }
+    
+    draw() {
+      ctx.fillStyle = `rgba(25, 93, 230, ${this.opacity})`;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  const particles = [];
+  for (let i = 0; i < 40; i++) {
+    particles.push(new ShowcaseParticle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+    
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

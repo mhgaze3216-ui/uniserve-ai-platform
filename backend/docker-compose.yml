@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: unser1-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: unser1
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    build: .
+    container_name: unser1-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://admin:password123@mongodb:27017/unser1?authSource=admin
+      JWT_SECRET: your_production_jwt_secret_here
+      JWT_EXPIRE: 7d
+    depends_on:
+      - mongodb
+    volumes:
+      - ./uploads:/app/uploads
+      - ./static-server.js:/app/static-server.js
+      - ../UNSER1:/app/static
+
+volumes:
+  mongodb_data:

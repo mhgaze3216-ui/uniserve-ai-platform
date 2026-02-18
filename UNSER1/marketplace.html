@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uniserve AI | Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/marketplace.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/fixes.css">
+  <link rel="stylesheet" href="assets/css/mobile-nav-fix.css">
+  <link rel="stylesheet" href="assets/css/signin-button-fix.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/header-unified.css">
+</head>
+
+<body>
+
+<div id="errorToast" class="error-toast">
+  <i class="fas fa-exclamation-circle"></i> Payment Failed: No payment detected. Please try again.
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-container">
+    <img src="assets/images/logo-thumb.png" alt="Logo" class="logo-thumb" onerror="this.style.display='none'">
+    <div class="logo">Uniserve<span>AI</span></div>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="marketplace.html" class="active">Marketplace</a>
+    <a href="education.html">Education</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="login.html" class="mobile-signin" style="display: none;">Sign In</a>
+  </nav>
+
+  <div class="signin-container">
+    <div class="user-avatar-container">
+      <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=195de6&color=fff" alt="User" class="user-avatar" title="Click to change image">
+    </div>
+    <a href="login.html" class="signin-btn">Sign In</a>
+  </div>
+</header>
+
+<div class="admin-actions">
+  <button class="btn-add-product" onclick="showPaymentError()"><i class="fas fa-plus"></i> Add Product</button>
+</div>
+
+<!-- MARKETPLACE -->
+<main class="marketplace">
+
+  <!-- FILTERS -->
+  <aside class="filters">
+    <h3>Categories</h3>
+    <button class="filter active" data-category="all">All Bundles</button>
+    <button class="filter" data-category="student">Student</button>
+    <button class="filter" data-category="creator">Creator</button>
+    <button class="filter" data-category="startup">Startup</button>
+    <button class="filter" data-category="uniserve">UniServe AI</button>
+  </aside>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+
+    <!-- 1. Student Bundle -->
+    <div class="product" data-category="student">
+      <div class="product-image-container">
+        <img src="assets/images/Student Bundle1.jpg" alt="Student Bundle" onerror="this.src='https://via.placeholder.com/300x200/4CAF50/white?text=Student+Bundle'">
+      </div>
+      <div class="product-content">
+        <h4>Student Bundle</h4>
+        <div class="price-tag">$19</div>
+        <ul class="product-list-item">
+          <li><i class="fas fa-check"></i> ChatGPT Premium</li>
+          <li><i class="fas fa-check"></i> NotebookLM Pro</li>
+          <li><i class="fas fa-check"></i> Super Duolingo</li>
+          <li><i class="fas fa-check"></i> Microsoft 365 products (Office apps + 1TB Google Drive)</li>
+        </ul>
+        <button class="add-to-cart-btn" data-product-name="Student Bundle" data-product-price="19" data-product-image="assets/images/Student Bundle1.jpg">Add to cart</button>
+        <button class="confirm-purchase" onclick="showPaymentError()">Confirm Purchase</button>
+      </div>
+    </div>
+
+    <!-- 2. Creator Bundle -->
+    <div class="product" data-category="creator">
+      <div class="product-image-container">
+        <img src="assets/images/Creator Bundle1.jpg" alt="Creator Bundle" onerror="this.src='https://via.placeholder.com/300x200/FF9800/white?text=Creator+Bundle'">
+      </div>
+      <div class="product-content">
+        <h4>Creator Bundle</h4>
+        <div class="price-tag">$29</div>
+        <ul class="product-list-item">
+          <li><i class="fas fa-check"></i> ChatGPT Premium</li>
+          <li><i class="fas fa-check"></i> Canva Pro</li>
+          <li><i class="fas fa-check"></i> CapCut Pro</li>
+          <li><i class="fas fa-check"></i> Lightroom Pro</li>
+        </ul>
+        <button class="add-to-cart-btn" data-product-name="Creative Bundle" data-product-price="29" data-product-image="assets/images/Creative Bundle1.jpg">Add to cart</button>
+        <button class="confirm-purchase" onclick="showPaymentError()">Confirm Purchase</button>
+      </div>
+    </div>
+
+    <!-- 3. Startup Bundle -->
+    <div class="product" data-category="startup">
+      <div class="product-image-container">
+        <img src="assets/images/Startup Bundle1.jpg" alt="Startup Bundle" onerror="this.src='https://via.placeholder.com/300x200/2196F3/white?text=Startup+Bundle'">
+      </div>
+      <div class="product-content">
+        <h4>Startup Bundle</h4>
+        <div class="price-tag">$34</div>
+        <ul class="product-list-item">
+          <li><i class="fas fa-check"></i> Shopify</li>
+          <li><i class="fas fa-check"></i> Stripe</li>
+          <li><i class="fas fa-check"></i> 1TB Google Drive</li>
+        </ul>
+        <button class="add-to-cart-btn" data-product-name="Creative Bundle" data-product-price="29" data-product-image="assets/images/Creative Bundle1.jpg">Add to cart</button>
+        <button class="confirm-purchase" onclick="showPaymentError()">Confirm Purchase</button>
+      </div>
+    </div>
+
+    <!-- 4. UniServe AI Platform & Development Services -->
+    <div class="product" data-category="uniserve">
+      <div class="product-image-container">
+        <img src="assets/images/UniServe AI Platform.jpg" alt="UniServe AI" onerror="this.src='https://via.placeholder.com/300x200/9C27B0/white?text=UniServe+AI'">
+      </div>
+      <div class="product-content">
+        <h4>UniServe AI Platform & Development Services</h4>
+        <div class="price-tag">Custom Pricing</div>
+        <ul class="product-list-item">
+          <li><i class="fas fa-star"></i> AI platform with real user interfaces</li>
+          <li><i class="fas fa-star"></i> AI tools integrated as features inside the app</li>
+          <li><i class="fas fa-star"></i> Unified experience across: Web, Mobile App, Dashboard</li>
+          <li><i class="fas fa-code"></i> Development services: Websites, Applications, Games</li>
+          <li><i class="fas fa-check"></i> Built by professional developers</li>
+          <li><i class="fas fa-check"></i> 100% custom-built from scratch (No templates)</li>
+          <li><i class="fas fa-check"></i> Developed entirely inside UniServe AI</li>
+        </ul>
+        <button class="add-to-cart-btn" data-product-name="Creative Bundle" data-product-price="29" data-product-image="assets/images/Creative Bundle1.jpg">Add to cart</button>
+        <button class="confirm-purchase" onclick="showPaymentError()">Confirm Purchase</button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth-ui.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/cart-widget.js"></script>
+  <script src="assets/js/user-profile.js"></script>
+  <script src="assets/js/marketplace.js"></script>
+  <link rel="stylesheet" href="assets/css/enhancements.css">
+  <script>
+    function showPaymentError() {
+      const toast = document.getElementById('errorToast');
+      toast.style.display = 'block';
+      
+      // Auto hide after 4 seconds
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
