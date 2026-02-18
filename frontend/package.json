@@ -9,9 +9,11 @@
     "axios": "^1.13.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^7.13.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^3.3.1"
   },
+  "homepage": "https://mhgaze3216-ui.github.io/uniserve-ai-platform",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

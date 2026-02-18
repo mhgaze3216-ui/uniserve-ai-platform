@@ -7,6 +7,15 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+// Handle GitHub Pages routing
+if (window.location.pathname.includes('/uniserve-ai-platform')) {
+  const path = window.location.pathname.replace('/uniserve-ai-platform', '');
+  if (path && path !== '/') {
+    window.history.replaceState({}, '', path);
+  }
+}
+
 root.render(
   <React.StrictMode>
     <App />

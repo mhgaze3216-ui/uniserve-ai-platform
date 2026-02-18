@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Dashboard.css';
 
@@ -67,25 +68,25 @@ const Dashboard: React.FC = () => {
           <div className="action-card">
             <h3>User Management</h3>
             <p>Manage students and instructors</p>
-            <button className="btn-primary">Manage Users</button>
+            <Link to="/users" className="btn-primary">Manage Users</Link>
           </div>
           
           <div className="action-card">
             <h3>Course Management</h3>
             <p>Create and manage courses</p>
-            <button className="btn-primary">Manage Courses</button>
+            <Link to="/courses" className="btn-primary">Manage Courses</Link>
           </div>
           
           <div className="action-card">
             <h3>Marketplace</h3>
             <p>Manage marketplace items</p>
-            <button className="btn-primary">Manage Marketplace</button>
+            <Link to="/marketplace" className="btn-primary">Manage Marketplace</Link>
           </div>
           
           <div className="action-card">
             <h3>Reports</h3>
             <p>View system reports and analytics</p>
-            <button className="btn-primary">View Reports</button>
+            <Link to="/reports" className="btn-primary">View Reports</Link>
           </div>
         </div>
       </main>
