@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/uniserve-ai-platform/static/css/main.7e765bb5.css",
+    "main.js": "/uniserve-ai-platform/static/js/main.a6bffbaf.js",
+    "static/js/488.62d74a3a.chunk.js": "/uniserve-ai-platform/static/js/488.62d74a3a.chunk.js",
+    "index.html": "/uniserve-ai-platform/index.html",
+    "main.7e765bb5.css.map": "/uniserve-ai-platform/static/css/main.7e765bb5.css.map",
+    "main.a6bffbaf.js.map": "/uniserve-ai-platform/static/js/main.a6bffbaf.js.map",
+    "488.62d74a3a.chunk.js.map": "/uniserve-ai-platform/static/js/488.62d74a3a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e765bb5.css",
+    "static/js/main.a6bffbaf.js"
+  ]
+}
